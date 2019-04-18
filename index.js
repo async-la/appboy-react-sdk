@@ -142,6 +142,15 @@ var ReactAppboy = {
   },
 
   /**
+  * Returns a device token
+  *
+  * @param {string} token - The device's push token.
+  */
+  getPushToken: function(callback) {
+    callFunctionWithCallback(AppboyReactBridge.getPushToken, [], callback);
+  },
+
+  /**
   * Reports that the current user performed a custom named event.
   * @param {string} eventName - The identifier for the event to track. Best practice is to track generic events
   *      useful for segmenting, instead of specific user actions (i.e. track watched_sports_video instead of

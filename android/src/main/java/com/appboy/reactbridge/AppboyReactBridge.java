@@ -117,6 +117,11 @@ public class AppboyReactBridge extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void getPushToken(Callback callback) {
+    reportResultWithCallback(callback, null, Appboy.getInstance(getReactApplicationContext()).getAppboyPushMessageRegistrationId());
+  }
+  
+  @ReactMethod
   public void logCustomEvent(String eventName, ReadableMap eventProperties) {
     if (eventProperties == null) {
       Appboy.getInstance(getReactApplicationContext()).logCustomEvent(eventName);
